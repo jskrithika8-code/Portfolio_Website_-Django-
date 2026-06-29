@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% block title %}About{% endblock %}
+{% block content %}
+<section>
+  <h2 class="section-title">About <span>Me</span></h2>
+  <p class="section-sub">A little about who I am.</p>
+  <div class="about-box">
+    <h2>Hi, I'm Krithika 👩‍💻</h2>
+    <p>I'm a Python developer based in Chennai, India. I love building desktop apps and web applications using Python, Django, and Tkinter.</p>
+    <p>I've built projects like a Weather CLI app, Expense Tracker, File Organizer, and this Portfolio website — all using Python.</p>
+    <p>I'm currently looking for internship and freelance opportunities. Feel free to reach out!</p>
+    <br>
+    <a href="{% url 'contact' %}" class="btn btn-primary">Get in Touch</a>
+  </div>
+</section>
+{% endblock %}

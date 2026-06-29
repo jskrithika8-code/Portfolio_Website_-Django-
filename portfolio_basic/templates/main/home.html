@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="hero">
+  <h1>Hi, I'm <span>Krithika</span> 👋</h1>
+  <p>Python Developer · Building clean apps with Django & Tkinter</p>
+  <a href="{% url 'about' %}" class="btn btn-primary">About Me</a>
+  <a href="{% url 'contact' %}" class="btn btn-outline">Contact</a>
+</div>
+<section>
+  <h2 class="section-title">My <span>Projects</span></h2>
+  <p class="section-sub">Things I've built.</p>
+  <div class="projects-grid">
+    {% for p in projects %}
+    <div class="card">
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.desc }}</p>
+      <span class="tag">{{ p.tech }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<section>
+  <h2 class="section-title">My <span>Skills</span></h2>
+  <p class="section-sub">Technologies I work with.</p>
+  <div class="skills-wrap">
+    {% for skill in skills %}
+    <span class="skill-tag">{{ skill }}</span>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

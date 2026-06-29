@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<section>
+  <h2 class="section-title">Contact <span>Me</span></h2>
+  <p class="section-sub">Have a project or opportunity? Let's talk!</p>
+  <div class="form-wrap">
+    {% if messages %}
+      {% for message in messages %}<div class="success">{{ message }}</div>{% endfor %}
+    {% endif %}
+    <form method="post">
+      {% csrf_token %}
+      {{ form.name }}
+      {{ form.email }}
+      {{ form.message }}
+      <button type="submit" class="btn btn-primary" style="width:100%; cursor:pointer;">Send Message 🚀</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
